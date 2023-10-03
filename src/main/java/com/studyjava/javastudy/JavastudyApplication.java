@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class JavastudyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavastudyApplication.class, args);
+		// SpringApplication.run(JavastudyApplication.class, args);
+		hossyStudy();
 	}
 
+	private static void hossyStudy(){
+
+	}
 }
