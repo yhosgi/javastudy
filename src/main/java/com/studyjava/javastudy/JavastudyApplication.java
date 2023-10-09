@@ -14,76 +14,118 @@ public class JavastudyApplication {
 		// hossyStudycalc();
 		// input();
 		// input2();
-		fuse1byou();
+		// fuse1byou();
+		// joukenBunki();
+		forStudy();
 	}
 
-	private static void hossyStudy(){
+	private static void hossyStudy() {
 		// うんこの出し方（コンソールで）
-		// out:クラス　print:メソッド
+		// out:クラス print:メソッド
 		System.out.print("うんこ");
 		System.out.print(1);
 		System.out.println("うっすうう");
 		System.out.print("うんこ");
 	}
 
-	private static void hossyStudycalc(){
-		System.out.println("unko"+"unko");
-		System.out.println("unko"+"1");
-		System.out.println("2"+"unko");
-		System.out.println("4"+"3");
-		System.out.println(1+1);
-		System.out.println(3-1);
-		System.out.println(6*2);
-		System.out.println(1/1);
-		System.out.println(10%3);
+	private static void hossyStudycalc() {
+		System.out.println("unko" + "unko");
+		System.out.println("unko" + "1");
+		System.out.println("2" + "unko");
+		System.out.println("4" + "3");
+		System.out.println(1 + 1);
+		System.out.println(3 - 1);
+		System.out.println(6 * 2);
+		System.out.println(1 / 1);
+		System.out.println(10 % 3);
 	}
 
-	private static void input(){
+	private static void input() {
 
 		System.out.println("文字列を入力してください");
 
-        Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
-        String str = scan.next();
+		String str = scan.next();
 
-        System.out.println("入力された文字列は「" + str + "」です");
+		System.out.println("入力された文字列は「" + str + "」です");
 
 		scan.close();
 
 	}
 
-		private static void input2(){
+	private static void input2() {
 
 		System.out.println("数値を入力してください");
 
-        Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
 
-        int a = scan.nextInt();
-		
-		System.out.println(a+5);
+		int a = scan.nextInt();
 
-        System.out.println("入力された数値とプラス5は「" + (a + 5) + "」です");
+		System.out.println(a + 5);
+
+		System.out.println("入力された数値とプラス5は「" + (a + 5) + "」です");
 
 		scan.close();
 
 	}
 
-		private static void fuse1byou(){
-			Scanner scan = new Scanner(System.in);
-			try {
-				//文字を入力させて表示
-				System.out.println("キーボードから文字を入力してください");
-				String str = scan.next();
-				System.out.println("入力された文字は「" + str + "」です");
-	
-				//数値を入力させて表示
-				System.out.println("キーボードから数字を入力してください");
-				int i  = scan.nextInt();
-				System.out.println("入力された文字は「" + i + "」です");
-			} catch (Exception e) {
-				System.out.println("ERROR");
-			}finally{
-				scan.close();
-			}
+	private static void fuse1byou() {
+		Scanner scan = new Scanner(System.in);
+		try {
+			// 文字を入力させて表示
+			System.out.println("キーボードから文字を入力してください");
+			String str = scan.next();
+			System.out.println("入力された文字は「" + str + "」です");
+
+			// 数値を入力させて表示
+			System.out.println("キーボードから数字を入力してください");
+			int i = scan.nextInt();
+			System.out.println("入力された文字は「" + i + "」です");
+		} catch (Exception e) {
+			System.out.println("ERROR");
+		} finally {
+			scan.close();
 		}
+	}
+
+	private static void joukenBunki() {
+		Scanner scan = new Scanner(System.in);
+		try {
+			System.out.println("数字を入力してください");
+			int a = scan.nextInt();
+			if (a > 10) {
+				System.out.println(a + "は10より大きいです");
+			} else if (a == 10) {
+				System.out.println(a + "は10と同じです");
+			} else {
+				System.out.println(a + "は10より小さいです");
+			}
+		} catch (Exception e) {
+			System.out.println("数字を入力してください");
+		} finally {
+			scan.close();
+		}
+	}
+
+	private static void forStudy() {
+		
+		Scanner scan = new Scanner(System.in);
+		try {
+			System.out.println("数字を入力してください");
+			int inputValue = scan.nextInt();
+			for (int i = inputValue; i < inputValue*2; i++) {
+            	System.out.println("i = " + i);
+        	}
+			
+			// for (int i = 0; i < inputValue; i++) {
+            // 	System.out.println("i = " + (inputValue+i));
+        	// }
+
+		} catch (Exception e) {
+			System.out.println("数字を入力してください");
+		} finally {
+			scan.close();
+		}
+	}
 }
