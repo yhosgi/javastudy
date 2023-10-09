@@ -14,48 +14,55 @@ import java.sql.SQLException;
 public class JavastudyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavastudyApplication.class, args);
-		Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
+		// whiteStudy();
+		whileStudy2();
+		// SpringApplication.run(JavastudyApplication.class, args);
+		// Connection connection = null;
+		// PreparedStatement preparedStatement = null;
+		// ResultSet resultSet = null;
 
-        try {
-            // JDBCドライバのロード
-            Class.forName("org.sqlite.JDBC");
+		// try {
+		// // JDBCドライバのロード
+		// Class.forName("org.sqlite.JDBC");
 
-            // データベースへの接続
-            String url = "jdbc:sqlite:/C:\\Users\\yohei\\OneDrive\\ドキュメント\\JAVA\\javastudy\\src\\main\\resources\\SQL\\Test.db"; // データベースファイルのパス
-            connection = DriverManager.getConnection(url);
+		// // データベースへの接続
+		// String url =
+		// "jdbc:sqlite:/C:\\Users\\yohei\\OneDrive\\ドキュメント\\JAVA\\javastudy\\src\\main\\resources\\SQL\\Test.db";
+		// // データベースファイルのパス
+		// connection = DriverManager.getConnection(url);
 
-            System.out.println("SQLiteデータベースに接続しました");
+		// System.out.println("SQLiteデータベースに接続しました");
 
-            // ここでデータベース操作を行います
+		// // ここでデータベース操作を行います
 
-            // 例: テーブル内のデータを取得する
-            String sql = "SELECT * FROM TEST"; // テーブル名を適切に置き換える
-            preparedStatement = connection.prepareStatement(sql);
-            resultSet = preparedStatement.executeQuery();
+		// // 例: テーブル内のデータを取得する
+		// String sql = "SELECT * FROM TEST"; // テーブル名を適切に置き換える
+		// preparedStatement = connection.prepareStatement(sql);
+		// resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()) {
-                int id = resultSet.getInt("No"); // 列名を適切に置き換える
-                String name = resultSet.getString("Name"); // 列名を適切に置き換える
+		// while (resultSet.next()) {
+		// int id = resultSet.getInt("No"); // 列名を適切に置き換える
+		// String name = resultSet.getString("Name"); // 列名を適切に置き換える
 
-                System.out.println("ID: " + id + ", Name: " + name);
-            }
+		// System.out.println("ID: " + id + ", Name: " + name);
+		// }
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (resultSet != null) resultSet.close();
-                if (preparedStatement != null) preparedStatement.close();
-                if (connection != null) connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+		// } catch (ClassNotFoundException e) {
+		// e.printStackTrace();
+		// } catch (SQLException e) {
+		// e.printStackTrace();
+		// } finally {
+		// try {
+		// if (resultSet != null)
+		// resultSet.close();
+		// if (preparedStatement != null)
+		// preparedStatement.close();
+		// if (connection != null)
+		// connection.close();
+		// } catch (SQLException e) {
+		// e.printStackTrace();
+		// }
+		// }
 	}
 
 	private static void hossyStudy() {
@@ -148,23 +155,71 @@ public class JavastudyApplication {
 	}
 
 	private static void forStudy() {
-		
+
 		Scanner scan = new Scanner(System.in);
 		try {
 			System.out.println("数字を入力してください");
 			int inputValue = scan.nextInt();
-			for (int i = inputValue; i < inputValue*2; i++) {
-            	System.out.println("i = " + i);
-        	}
-			
+			for (int i = inputValue; i < inputValue * 2; i++) {
+				System.out.println("i = " + i);
+			}
+
 			// for (int i = 0; i < inputValue; i++) {
-            // 	System.out.println("i = " + (inputValue+i));
-        	// }
+			// System.out.println("i = " + (inputValue+i));
+			// }
 
 		} catch (Exception e) {
 			System.out.println("数字を入力してください");
 		} finally {
 			scan.close();
 		}
+	}
+
+	private static void whiteStudy() {
+
+		Scanner scan = new Scanner(System.in);
+
+		try {
+			System.out.println("数字を入力してください");
+			int inputValue = scan.nextInt();
+			int i = 0;
+			while (i < inputValue) {
+				System.out.println("i = " + (inputValue + i));
+				i++;
+			}
+		} catch (Exception e) {
+			System.out.println("数字を入力してください");
+		} finally {
+			scan.close();
+		}
+
+	}
+
+	private static void whileStudy2() {
+		Scanner scan = new Scanner(System.in);
+		int i = 0;
+		int inputValue;
+		while (i < 1) {
+			
+			try {
+				System.out.println("数字を入力してください");
+				inputValue = scan.nextInt();
+				if (inputValue > 10) {
+					System.out.println(inputValue + "は10より大きいです");
+				} else if (inputValue == 10) {
+					System.out.println(inputValue + "は10と同じです");
+				} else {
+					System.out.println(inputValue + "は10より小さいです");
+				}
+
+				i++;
+
+			} catch (Exception e) {
+				System.out.println("数字を入力してください2");
+			} 
+		
+		}
+		scan.close();
+	
 	}
 }
