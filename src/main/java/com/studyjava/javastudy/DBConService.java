@@ -38,7 +38,7 @@ public class DBConService {
 		preparedStatement = connection.prepareStatement(sql);
 		resultSet = preparedStatement.executeQuery();
 
-        while (resultSet.next()) {      
+        while (resultSet.next()) {     
             model model = new model();
             model.setId(resultSet.getInt("No"));
             model.setName(resultSet.getString("name"));

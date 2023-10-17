@@ -1,12 +1,10 @@
 package com.studyjava.javastudy;
-import java.sql.ResultSet;
-import java.util.List;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
-import org.springframework.stereotype.Service;
 import com.studyjava.model.model;
 
 
@@ -17,17 +15,19 @@ public class OtherController {
 
     @GetMapping("/other-controller")
     public String showOtherPage(Model model) {
-        
-        try {
-            List<model> resultList = DBConService.conDB();
-            for (model a : resultList) {
-            System.out.println("ID: " + a.getId() + ", Name: " + a.getName());
-            }
-            model.addAttribute("message", resultList.toString());
+        List<model> resultList = DBConService.conDB();
+        model.addAttribute("resultList", resultList);
 
-        } catch (Exception e) {
+        // try {
+        //     List<model> resultList = DBConService.conDB();
+        //     for (model a : resultList) {
+        //     System.out.println("ID: " + a.getId() + ", Name: " + a.getName());
+        //     }
+        //     model.addAttribute("message", resultList.toString());
+
+        // } catch (Exception e) {
             
-        }
+        // }
 
 
 

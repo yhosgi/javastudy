@@ -1,12 +1,48 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Display</title>
+</head>
+<!-- ボタンを追加 -->
+<button onclick="redirectToOtherController()">Go Back</button>
+
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${resultList}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    function redirectToOtherController() {
+        // 別のコントローラーへのURLを指定
+        window.location.href = '/'; // 遷移先のURLを適宜変更
+    }
+</script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Other Page</title>
 </head>
 <body>
-    <h1>Welcome to the Other Page!</h1>
+    <h1>Welcome to the Other Page!</h1> -->
     
     <!-- モデルのデータを表示 -->
-    <p th:text="${message}"></p>
+    <!-- <p th:text="${message}"></p>
 </body>
-</html>
+</html> -->
